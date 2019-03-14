@@ -7,7 +7,7 @@ void main(){
 	char c;
 	while(1){
 		
-		printf("\nMenu\n1.Find sum of series '1 - x^2/2! + x^4/4! ...'\n2.Find sum of series '1 - x^1/1! + x^3/3! ...'\nEnter Choice: ");
+		printf("\nMenu\n1.Find sum of series '1 - x^2/2! + x^4/4! ...'\n2.Find sum of series '1 - x^1/1! + x^2/2! ...(fibonocci)'\nEnter Choice: ");
 		scanf("%d", &ch);
 		printf("Enter max power: ");
 		scanf("%d", &p);
@@ -41,8 +41,6 @@ void main(){
 							fac*=j;
 							pow*=x;
 						}
-							
-						printf("%f\n%f\n%f\n%d\n", sum, pow, fac, mult);
 						sum += mult*pow/fac;
 						q = q + prev;
 						prev = q - prev;
