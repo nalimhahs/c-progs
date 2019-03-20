@@ -6,12 +6,12 @@ void main(){
 	char cont;
 	while(1){
 		
-		printf("\nMenu\n1.Find sum of matrix\n2.Find product of matrix\n3.Find transpose of matrix\nEnter Choice: ");
+		printf("\nMenu\n1.Find product of matrix\n2.Find sum of matrix\n3.Find transpose of matrix\nEnter Choice: ");
 		scanf("%d", &ch);
 		
 		switch(ch){
 		
-			case 2: 
+			case 1: 
 				printf("Enter number of rows and columns of first matrix: ");
 				scanf("%d%d", &m, &n);
 				printf("Enter elements: \n");				
@@ -21,10 +21,10 @@ void main(){
 					
 				printf("Enter number of rows and columns of second matrix: ");
 				scanf("%d%d", &p, &q);
-				
-				if(n != p)
-					printf("\n\nMatrix cannot be multiplied!!\n\n"); break;
-					
+				if(m != p && n != q){
+					printf("\n\nMatrix cannot be added!!\n\n"); 
+					break;
+				}
 				printf("Enter elements: \n");								
 				for(i = 0; i < p; i++)
 					for(j = 0; j < q; j++)
@@ -46,7 +46,7 @@ void main(){
 					
 				break;
 				
-			case 1:	
+			case 2:	
 			
 				printf("Enter number of rows and columns of first matrix: ");
 				scanf("%d%d", &m, &n);
@@ -58,8 +58,10 @@ void main(){
 				printf("Enter number of rows and columns of second matrix: ");
 				scanf("%d%d", &p, &q);
 				
-				if(m != p && n != q)
-					printf("\n\nMatrix cannot be added!!\n\n"); break;
+				if(m != p && n != q){
+					printf("\n\nMatrix cannot be added!!\n\n"); 
+					break;
+				}
 					
 				printf("Enter elements: \n");								
 				for(i = 0; i < p; i++)
@@ -98,7 +100,7 @@ void main(){
 				for(i=0;i<n;i++){
 					printf("\n");
 					for(j=0;j<m;j++){
-						printf("%d",b[i][j]);
+						printf("%d ",b[i][j]);
 					}
 				}				
 				break;
