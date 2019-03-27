@@ -21,8 +21,8 @@ void main(){
 					
 				printf("Enter number of rows and columns of second matrix: ");
 				scanf("%d%d", &p, &q);
-				if(m != p && n != q){
-					printf("\n\nMatrix cannot be added!!\n\n"); 
+				if(n != p){
+					printf("\n\nMatrix cannot be multiplied!!\n\n"); 
 					break;
 				}
 				printf("Enter elements: \n");								
