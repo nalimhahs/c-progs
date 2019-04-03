@@ -6,14 +6,14 @@ void main(){
 	FILE *fp1, *fp2;
 	char ch;
 	
-	//fp1 = fopen("text1", "w");
+	fp1 = fopen("text1", "w");
 	
-	//printf("Enter content into new file: \n");
+	printf("Enter content into new file: \n");
 	
-	/*while((ch = getchar()) != EOF)
+	while((ch = getchar()) != EOF)
 		putc(ch, fp1);
 	fclose(fp1);
-	*/
+	
 	fp1 = fopen("text1", "r");	
 	fp2 = fopen("text2", "w");
 	

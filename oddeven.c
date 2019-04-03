@@ -4,8 +4,21 @@
 
 void main(){
 	FILE *fp1, *fp2, *fp3;
-	int ch;
+	int ch, n, i;
 	
+	printf("Enter number of numbers: ");
+	scanf("%d", &n);
+	
+	printf("Enter content into new file: \n");
+	
+	fp1 = fopen("nos", "w");
+	
+	for(i = 0; i < n; i ++){
+		scanf("%d", &ch);
+		putw(ch, fp1);
+	}
+	
+	fclose(fp1);
 	//fp1 = fopen("nos", "w");
 	
 	//printf("Enter content into new file: \n");
@@ -20,6 +33,8 @@ void main(){
 	
 	printf("\nCopying!!\n");
 	while((ch = getw(fp1)) != EOF){
+		printf("%d\n", ch);
+		
 		if(ch % 2 == 0)
 			putw(ch, fp2);
 		else
@@ -34,7 +49,7 @@ void main(){
 	fp2 = fopen("odd", "r");
 	
 	while((ch = getw(fp2)) != EOF)
-		printf("%s", ch);
+		printf("%d\n", ch);
 	
 	fclose(fp2);
 	printf("\n");
@@ -44,7 +59,7 @@ void main(){
 	fp2 = fopen("even", "r");
 	
 	while((ch = getw(fp2)) != EOF)
-		printf("%s", ch);
+		printf("%d\n", ch);
 	
 	fclose(fp2);
 	printf("\n");
