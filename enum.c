@@ -2,7 +2,7 @@
 
 void main(){
 
-	enum day{sun = 1, mon, tue, wed, thur, fri, sat}
+	enum day{sun = 1, mon, tue, wed, thur, fri, sat};
 	int i;
 	
 	for(i = sun; i <= sat; i++)
