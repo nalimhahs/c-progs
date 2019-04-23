@@ -4,12 +4,12 @@
 void shifter(char *a, int pos, int len)
 {
     int end, i;
-    char b[100];
-    printf("%s",a);
+    //char b[100];
+    //printf("%s",a);
     end = strlen(a);
     for (i = end; i > pos; i--)
     {
-        b[i + len] = b[i];
+        a[i + len] = a[i];
     }
     a[end + len] = '\0';
 }
@@ -29,6 +29,8 @@ void putter(char *sub_string, char *string, int pos)
 
 void main()
 {
-    putter("test", "Hello World!", 3);
+    char string[100];
+    gets(string);
+    putter("test", string, 3);
     //printf("\n%d", strlen(string));
 }
