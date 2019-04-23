@@ -7,9 +7,9 @@ void shifter(char *a, int pos, int len)
     //char b[100];
     //printf("%s",a);
     end = strlen(a);
-    for (i = end; i > pos; i--)
+    for (i = end; i >= pos; i--)
     {
-        a[i + len] = a[i];
+        a[i + pos] = a[i];
     }
     a[end + len] = '\0';
 }
@@ -20,7 +20,7 @@ void putter(char *sub_string, char *string, int pos)
     sub_len = strlen(sub_string);
     str_len = strlen(string);
     shifter(string, pos, sub_len);
-    for (i = pos - 1; i < sub_len; i++)
+    for (i = pos; i < sub_len; i++)
     {
         string[i] = sub_string[i - sub_len];
     }
