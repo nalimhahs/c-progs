@@ -18,8 +18,42 @@ int mode(int a[],int n) {
       }
    }
 
-   return maxValue;
+	return maxValue;
 }
+
+/*int counter(int a[], int n, int s){
+	int j, count = 0;
+
+	for (j = 0; j < n; j++) {
+        if (a[j] == s)
+         	count++;
+    }
+    
+    return count;
+}
+
+
+
+void multimode(int a[], int n){
+	int cache[20], count = 0, j;
+	
+	cache[0] = mode(a, n);
+	
+	maxCount = counter(a, n, cache[0]);
+    
+    for (i = 0; i < n; i++) {
+    	if (a[i] == cache[0]){
+    		a[i] = NULL;
+    		break;
+    	}         	
+    }
+    
+    mode2 = mode(a, n);
+    
+    
+    
+}
+*/
 
 float median(int a[], int n){
 	int i, j, pos, small, temp;
@@ -38,11 +72,11 @@ float median(int a[], int n){
 		}
 	}
 	
-	if(n%2==0){
+	if(n%2==1){
 		return (float)a[n/2];
 	}
 	else {
-		return (a[(n-1)/2] + a[(n+1)/2])/2.0;
+		return (float)(a[(n-1)/2] + a[n/2])/2.0; 
 	}
 	
 	
