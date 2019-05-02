@@ -36,7 +36,7 @@ void del(char *string, int n, int pos)
 	string[a - n] = '\0';
 }
 
-void replace(char *string, char *sub, char *new)
+int replace(char *string, char *sub, char *new)
 {
 	int i, j, str_len, sub_len, flag, pos;
 	str_len = strlen(string);
@@ -55,10 +55,16 @@ void replace(char *string, char *sub, char *new)
 		}
 		if(flag == sub_len){
 			pos = i;
+			break;
 		}	
+	}
+	if(flag != sub_len){
+		printf("\nString not found!\n");
+		return 1;
 	}	
 	del(string, sub_len, pos);
-	putter(sub, string, pos);
+	putter(new, string, pos);
+	return 0;
 }
 
 void main()
@@ -74,10 +80,10 @@ void main()
 		case 1:
 		 
 		    printf("Enter the main string: ");
-			scanf("%s", &string);
+			scanf("%s", string);
 			//fgets(string, sizeof(string), stdin);
 			printf("Enter the sub string: ");
-			scanf("%s", &sub);
+			scanf("%s", sub);
 			printf("Enter the position: ");
 			scanf("%d", &pos);
 			
@@ -109,8 +115,8 @@ void main()
 			printf("Enter the string to replace: ");
 			scanf("%s", new);
 			
-			replace(string, sub, new);  
-   			printf("The modified string is: %s\n", string);
+			if(!replace(string, sub, new))
+   				printf("The modified string is: %s\n", string);
 							
 			break;
 	
